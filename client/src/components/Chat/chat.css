@@ -1,0 +1,25 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #336699;
+}
+
+.joinOuterContainer {
+    font-family: sans-serif;
+    margin-top: 40vh;
+}
+
+.joinInnerContainer {
+    width: 40vw;
+    height: 40vh;
+    background-color: #204060;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4vh;
+}
