@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #336699;
+    background-color: #1A1A1D;
 }
 
 .joinOuterContainer {
@@ -14,7 +14,7 @@ body {
 .joinInnerContainer {
     width: 35vw;
     height: 50vh;
-    background-color: #204060;
+    background-color: black;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,4 +59,4 @@ body {
     font-size: 3vh;
     color: rgb(105, 105, 219);
     outline: none;
-} 
+}
