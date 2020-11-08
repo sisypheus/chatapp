@@ -14,11 +14,12 @@ body {
 .joinInnerContainer {
     width: 35vw;
     height: 50vh;
-    background-color: black;
+    background-color: #00010a;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 5%;
     text-align: center;
 }
 
@@ -38,7 +39,7 @@ body {
     display: block;
     margin: 6vh auto;
     text-align: center;
-    border: 2px solid lightblue;
+    border: 2px solid #65d2e6;
     padding: 1vh 1vw;
     color: white;
     border-radius: 2vw;
@@ -53,10 +54,11 @@ body {
 .Button {
     width: 20vw;
     height: 6vh;
-    background: lightblue;
-    border: 2px solid lightblue;
+    background: #65d2e6;
+    border: 2px solid #65d2e6;
     border-radius: 2vw;
     font-size: 3vh;
-    color: rgb(105, 105, 219);
+    color: #00042b;
     outline: none;
+    font-weight: 800;
 }

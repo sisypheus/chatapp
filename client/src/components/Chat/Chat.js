@@ -15,7 +15,7 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    const ENDPOINT = 'https://react-node-realtimechatapp.herokuapp.com/';
+    const ENDPOINT = 'localhost:5000/'; //https://react-node-realtimechatapp.herokuapp.com/';
 
     useEffect(() => {
         const {name, room} = queryString.parse(location.search);
@@ -36,14 +36,16 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
+        socket.on('message', (message) => {
+            setMessages(messages => [...messages, message]);
+        });
+    }, []);
+
+    useEffect(() => {
         const scroll = document.getElementsByClassName('message_container')[0];
         scroll.scrollTo(0, scroll.scrollHeight);
-
-        socket.on('message', (message) => {
-            setMessages([...messages, message]);
-        });
-    }, [messages]);
-
+    }, [messages.length]);
+    
     const sendMessage = (event) => {
         event.preventDefault();
 
