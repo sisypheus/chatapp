@@ -36,6 +36,9 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
+        const scroll = document.getElementsByClassName('message_container')[0];
+        scroll.scrollTo(0, scroll.scrollHeight);
+
         socket.on('message', (message) => {
             setMessages([...messages, message]);
         });
@@ -47,7 +50,7 @@ const Chat = ({ location }) => {
         if (message) {
             socket.emit('sendMessage', message, () => setMessage(''));
         }
-    }
+    };
 
     return (
         <div className="outerContainer">
@@ -58,6 +61,6 @@ const Chat = ({ location }) => {
             </div>
         </div>
     )
-}
+};
 
 export default Chat;

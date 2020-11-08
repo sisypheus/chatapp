@@ -7,7 +7,6 @@
   }
   
   .container {
-    overflow: scroll;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
