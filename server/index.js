@@ -1,6 +1,7 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const {addUser, removeUser, getUser, getUserRoom} = require('./users.js');
 
@@ -29,6 +30,8 @@ io.on('connection', (socket) => {
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
 
+        if (!user)
+            return;
         io.to(user.room).emit('message', {user: user.name, text: message});
 
         callback();
@@ -44,5 +47,6 @@ io.on('connection', (socket) => {
 });
 
 app.use(router);
+app.use(cors());
 
 server.listen(PORT, () => console.log('Server has started on port ' + PORT));

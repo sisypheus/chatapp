@@ -1,10 +1,19 @@
-messageBox {
+.messageBox {
     background: #F3F3F3;
     border-radius: 20px;
     padding: 5px 20px;
     color: white;
-    display: inline-block;
+    display: flex;
     max-width: 80%;
+    overflow: auto;
+    width: fit-content;
+    /*flex-direction: column-reverse;*/
+  }
+
+  .messages_container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
   }
   
   .messageText {
@@ -20,10 +29,13 @@ messageBox {
   }
   
   .messageContainer {
+    flex-shrink: 10;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    flex: 2;
     padding: 0 5%;
     margin-top: 3px;
+    flex-direction: row-reverse;
   }
   
   .sentText {
@@ -43,11 +55,11 @@ messageBox {
   }
   
   .justifyStart {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   
   .justifyEnd {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   
   .colorWhite {
