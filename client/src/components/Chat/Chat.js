@@ -15,6 +15,7 @@ const Chat = ({ location }) => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [isConnected, setIsConnected] = useState(false);
     const ENDPOINT = 'https://react-node-realtimechatapp.herokuapp.com/';
 
     useEffect(() => {
